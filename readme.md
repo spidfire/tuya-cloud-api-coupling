@@ -1,14 +1,29 @@
+A simple communication wrapper for usage with the tuya cloud api
+
+
+# Install 
+
+```
+npm i tuya-cloud-api-coupling
+```
+
+or
+
+```
+yarn add tuya-cloud-api-coupling
+```
+
 # Setup 
   - Create an account for tuya (from other tutorials I heard US account is best for instant acceptance)
   - Go to Cloud -> Development
   - Press the Upgrade IoT Core Plan
   - Sign up for Trail Package (is free)
   - Create a cloud project with 
-  -  Industry: Smart Home
-  -  Development Method: Smart home
-  -  Data center: Look in your Smart Life app under me -> settings (right top button) -> account and security -> region
-  - Look up the corresponding data center on https://github.com/tuya/tuya-home-assistant/blob/main/docs/regions_dataCenters.md (Also remember the endpoint for in code later)
-  - Then you get an popup where you can authorize api products, here you add Device status notifications and keep the rest also enabled.
+    -  Industry: Smart Home
+    -  Development Method: Smart home
+    -  Data center: Look in your Smart Life app under me -> settings (right top button) -> account and security -> region
+    - Look up the corresponding data center on https://github.com/tuya/tuya-home-assistant/blob/main/docs/regions_dataCenters.md (Also remember the endpoint for in code later)
+  - Then you get a popup where you can authorize api products, here you add Device status notifications and keep the rest also enabled.
   - Your project gets created
   - Go to devices -> Link Tuya App Account
   - Click on add App App Account
@@ -19,13 +34,16 @@
   - Copy a Device id to the example
   - Copy the Access ID and Access Secrets from the overview
   - Copy the examples/config.example.js -> examples/config.js
-  - fill in the data
+  - Fill in the data in the example below
 
 # Example 
 There are examples in the example directory
 
 Basic usage:
 ```
+    const TuyaCloudApiCoupling = require("tuya-cloud-api-coupling");
+    // import * as TuyaCloudApiCoupling from 'tuya-cloud-api-coupling'
+
     let connection = new TuyaCloudApiCoupling.Connection({
     // Check readme above for your correct endpoint
         host: 'https://openapi.tuyaeu.com',
@@ -38,5 +56,11 @@ Basic usage:
     console.log(data);
 
 ```
+# API documentation.
 
+GET /v1.0/devices/${deviceId} -> Current device state
+https://developer.tuya.com/en/docs/cloud/device-management?id=K9g6rfntdz78a
+
+POST /v1.0/devices/{device_id}/commands -> to send a command
+https://developer.tuya.com/en/docs/cloud/device-control?id=K95zu01ksols7#title-36-API%20description
 

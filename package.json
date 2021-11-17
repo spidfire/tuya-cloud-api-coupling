@@ -1,19 +1,24 @@
 {
   "name": "tuya-cloud-api-coupling",
   "version": "1.0.1",
+  "description": "A simple communication wrapper for usage with the tuya cloud api",
+  "keywords": ["tuya", "tuya-cloud"],
+  "homepage": "https://github.com/spidfire/tuya-cloud-api-coupling",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spidfire/tuya-cloud-api-coupling"
+  },
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "files": [
     "lib",
     "package.json"
   ],
+
   "dependencies": {
     "axios": "^0.24.0",
     "crypto": "^1.0.1",
     "qs": "^6.10.1"
-  },
-  "scripts": {
-    "build": "rollup -c"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -22,5 +27,9 @@
     "rollup": "^2.60.0",
     "rollup-plugin-typescript2": "^0.31.0",
     "typescript": "^4.4.4"
+  },
+
+  "scripts": {
+    "build": "rollup -c"
   }
 }
