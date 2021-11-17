@@ -1,0 +1,4 @@
+examples/config.js
+node_modules
+*.log
+.idea
